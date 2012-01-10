@@ -1,0 +1,35 @@
+<h1><%= @conversation.subject %></h1>
+
+<div>
+  <h4>From: <%= @user.name %></h4>
+  <h4>To:</h4>
+  <ul>
+    <%# TODO: move method into model %>
+    <% for user in @conversation.users.reject! { |u| u == @user } do %>
+      <li><%= link_to user.name, user %></li>
+    <% end %>
+  </ul>
+</div>
+
+<% for message in @conversation.messages do %>
+  <div class="message"><%= time_ago_in_words(message.created_at) %> ago, <%= message.user.name %> wrote:
+    <div class="message_body"><%= message.body %></div>
+  </div>
+<% end %>
+
+<%= form_for(@message, :url => user_conversation_messages_path(@conversation.user, @conversation)) do |f| %>
+  <div>
+    <%= f.label :body %><br />
+    <%= f.text_area :body %>
+  </div>
+  <%= f.submit %>
+<% end %>
+
+<% if current_user == @conversation.user && !@conversation.read? %>
+  <%= link_to "Mark as read", mark_as_read_user_conversation_path(@conversation), :method => :post %>
+<% elsif current_user == @conversation.user && @conversation.read? %>
+  <%= link_to "Mark as unread", mark_as_unread_user_conversation_path(@conversation), :method => :post %>
+<% end %>
+<br />
+
+<%= link_to "Back to conversations", user_conversations_path(@user) %>
