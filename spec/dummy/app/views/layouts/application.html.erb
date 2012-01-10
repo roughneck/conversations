@@ -8,6 +8,7 @@
 </head>
 <body>
 
+<%= current_user ? 'logged in as '+current_user.name : 'not logged in' %>
 <%= yield %>
 
 </body>
