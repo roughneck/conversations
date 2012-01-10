@@ -3,7 +3,7 @@
 <ul>
   <% for conversation in @conversations do %>
     <li class="<%= conversation.read? ? 'read' : 'unread' %>">
-      <%= conversation.sender %>
+      <%= conversation.participants %>
       -
       <%= link_to conversation.subject, user_conversation_path(conversation.user, conversation) %>
       -

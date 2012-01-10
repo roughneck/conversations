@@ -1,0 +1,19 @@
+<h1>New Conversation</h1>
+
+<%= form_for(@conversation, :url => user_conversations_path) do |f| %>
+  <div>
+    <%= f.label :to_tokens %>
+    <%= f.text_field :to_tokens %>
+  </div>
+  <div>
+    <%= f.label :subject %>
+    <%= f.text_field :subject %>
+  </div>
+  <%= f.fields_for :messages do |m| %>
+    <div>
+      <%= m.label :body %><br />
+      <%= m.text_area :body %>
+    </div>
+  <% end %>
+  <%= f.submit %>
+<% end %>

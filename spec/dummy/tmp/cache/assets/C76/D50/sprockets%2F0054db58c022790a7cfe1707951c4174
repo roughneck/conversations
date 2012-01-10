@@ -1,6 +1,6 @@
-o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1326132115.835954:@value{	I"length:EFiqlI"digest;
-F"%5322abb96bee50dd57c3eb57f4ad06c7I"source;
-FI"ql/*
+o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1326220186.3279371:@value{	I"length:EFillI"digest;
+F"%edb411b34b04fc66c6db43d5f8a7e5f1I"source;
+FI"ll/*
  * jQuery Plugin: Tokenizing Autocomplete Text Entry
  * Version 1.6.0
  *
@@ -863,8 +863,8 @@ $.TokenList.Cache = function (options) {
 }(jQuery));
 
 $(function () {
-  $('#conversations_user_conversation_to_tokens').tokenInput('/users.json', { crossDomain: false });
+  $('#conversations_conversation_to_tokens').tokenInput('/users.json', { crossDomain: false });
 });
 ;
 FI"_version;
-F"%f138e6a2d1364d7505184ead29aa2c15
+F"%ab72ad7f8ba9fca7787825fb8af0947b

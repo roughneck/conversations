@@ -1,6 +1,6 @@
-o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1326132115.838321:@value{	I"length:EFi˜sI"digest;
-F"%1a8f947176e14078dda55aa281f378f7I"source;
-FI"˜s/*!
+o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1326220186.3302898:@value{	I"length:EFi“sI"digest;
+F"%899797bf7605cc2df3b263a760ef0b64I"source;
+FI"“s/*!
  * jQuery JavaScript Library v1.7.1
  * http://jquery.com/
  *
@@ -10503,7 +10503,7 @@ $.TokenList.Cache = function (options) {
 }(jQuery));
 
 $(function () {
-  $('#conversations_user_conversation_to_tokens').tokenInput('/users.json', { crossDomain: false });
+  $('#conversations_conversation_to_tokens').tokenInput('/users.json', { crossDomain: false });
 });
 // This is a manifest file that'll be compiled into including all the files listed below.
 // Add new JavaScript/Coffee code in separate files in this directory and they'll automatically
@@ -10514,4 +10514,4 @@ $(function () {
 ;
 ;
 FI"_version;
-F"%1f05b9b404497a84a1ce2faeccff822a
+F"%2681b7a62b9abda4c040ecc2206d14e5
