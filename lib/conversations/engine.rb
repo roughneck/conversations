@@ -12,9 +12,9 @@ module Conversations
       app.middleware.use ::ActionDispatch::Static, "#{root}/public"
     end
     
-    initializer "conversations.models.converser" do
+    initializer "conversations.models.conversationalist" do
       ActiveSupport.on_load(:active_record) do
-        include Conversations::Models::Converser
+        include Conversations::Models::Conversationalist
       end
     end
 

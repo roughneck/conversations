@@ -1,6 +1,6 @@
 module Conversations
   module Models
-    autoload :Converser, 'conversations/models/converser'
+    autoload :Conversationalist, 'conversations/models/conversationalist'
   end
   
   # Our host application root path

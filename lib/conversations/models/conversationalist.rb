@@ -1,6 +1,6 @@
 module Conversations
   module Models
-    module Converser
+    module Conversationalist
       def self.included(mod)
         mod.extend(ClassMethods)
       end
