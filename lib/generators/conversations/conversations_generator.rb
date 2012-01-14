@@ -8,16 +8,13 @@ class ConversationsGenerator < Rails::Generators::Base
   end
 
   def self.next_migration_number(dirname)
-    if ActiveRecord::Base.timestamped_migrations
-      Time.new.utc.strftime("%Y%m%d%H%M%S")
-    else
-      "%.3d" % (current_migration_number(dirname) + 1)
-    end
+    next_migration_number = current_migration_number(dirname) + 1
+    ActiveRecord::Migration.next_migration_number(next_migration_number)
   end
 
   def create_migration_file
     migration_template '20120105153739_create_conversations.rb', 'db/migrate/create_conversations.rb'
-    migration_template '20120105153800_create_conversations.rb', 'db/migrate/create_conversations.rb'
+    migration_template '20120105153800_create_user_conversations.rb', 'db/migrate/create_user_conversations.rb'
     migration_template '20120105153812_create_messages.rb', 'db/migrate/create_messages.rb'
   end
 end

@@ -6,7 +6,7 @@ module Conversations
       end
       
       module ClassMethods
-        def has_conversation
+        def has_conversations
           has_many :user_conversations, :class_name => "Conversations::UserConversation"
           has_many :conversations, :through => :user_conversations
           has_many :messages, :through => :conversations

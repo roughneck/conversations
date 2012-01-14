@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  has_conversation
+  has_conversations
   
   attr_accessible :name
   
