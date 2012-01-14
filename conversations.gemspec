@@ -12,8 +12,8 @@ Gem::Specification.new do |s|
   s.authors     = ["Patrick Bartels"]
   s.email       = ["patrick@bartels.ug"]
   s.homepage    = %q{https://github.com/roughneck/conversations}
-  s.summary     = "TODO: Summary of Conversations."
-  s.description = "TODO: Description of Conversations."
+  s.summary     = "Summary of Conversations."
+  s.description = "Description of Conversations."
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
