@@ -26,9 +26,9 @@
 <% end %>
 
 <% if current_user == @conversation.user && !@conversation.read? %>
-  <%= link_to "Mark as read", mark_as_read_user_conversation_path(@conversation), :method => :post %>
+  <%= link_to "Mark as read", mark_as_read_user_conversation_path(@conversation.user, @conversation), :method => :post %>
 <% elsif current_user == @conversation.user && @conversation.read? %>
-  <%= link_to "Mark as unread", mark_as_unread_user_conversation_path(@conversation), :method => :post %>
+  <%= link_to "Mark as unread", mark_as_unread_user_conversation_path(@conversation.user, @conversation), :method => :post %>
 <% end %>
 <br />
 
