@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Patrick Bartels"]
   s.email       = ["patrick@bartels.ug"]
-  s.homepage    = %q{https://github.com/roughneck/rails_templatizer}
+  s.homepage    = %q{https://github.com/roughneck/conversations}
   s.summary     = "TODO: Summary of Conversations."
   s.description = "TODO: Description of Conversations."
 
@@ -25,5 +25,9 @@ Gem::Specification.new do |s|
   s.add_dependency "rails", "~> 3.1.3"
   s.add_dependency "jquery-rails", "~> 1.0.19"
 
-  s.add_development_dependency "sqlite3"
+  s.add_development_dependency "sqlite3", "~> 1.3"
+  s.add_development_dependency "rspec-rails", "~> 2.8"
+  s.add_development_dependency "capybara", "~> 1.1"
+  s.add_development_dependency "factory_girl_rails", "~> 1.4"
+  s.add_development_dependency "simplecov", "~> 0.5"
 end
