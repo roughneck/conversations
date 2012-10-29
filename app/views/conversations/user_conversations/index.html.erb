@@ -1,4 +1,4 @@
-<h1><%= @user.name %>'s Conversations</h1>
+<h1><%= @user.name %>'s <%= Conversations::Conversation.model_name.human %></h1>
 
 <ul>
   <% for conversation in @conversations do %>
@@ -12,6 +12,4 @@
   <% end %>
 </ul>
 
-<%= link_to "Create a New Conversation", new_user_conversation_path(@user) %>
-<br>
-<%= link_to "Back to User", user_path(@user) %>
+<%= link_to t('conversation.index.new_conversation'), new_user_conversation_path(@user) %>

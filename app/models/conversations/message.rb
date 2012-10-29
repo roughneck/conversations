@@ -1,6 +1,6 @@
 module Conversations
   class Message < ActiveRecord::Base
-    attr_accessible :user_id, :conversation_id, :body
+    attr_accessible :user_id, :conversation_id, :body, :user
   
     belongs_to :user
     belongs_to :conversation

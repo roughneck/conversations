@@ -1,8 +1,8 @@
 <h1><%= @conversation.subject %></h1>
 
 <div>
-  <h4>From: <%= @user.name %></h4>
-  <h4>To:</h4>
+  <h4><%= t('conversation.show.from') %>: <%= @user.name %></h4>
+  <h4><%= t('conversation.show.to') %>:</h4>
   <ul>
     <%# TODO: move method into model %>
     <% for user in @conversation.users.reject! { |u| u == @user } do %>
@@ -12,24 +12,23 @@
 </div>
 
 <% for message in @conversation.messages do %>
-  <div class="message"><%= time_ago_in_words(message.created_at) %> ago, <%= message.user.name %> wrote:
+  <div class="message"><%= t('conversation.show.time_ago', time: time_ago_in_words(message.created_at)) %> <%= t('conversation.show.wrote', person: message.user.name) %>:
     <div class="message_body"><%= message.body %></div>
   </div>
 <% end %>
-
+<hr />
 <%= form_for(@message, :url => user_conversation_messages_path(@conversation.user, @conversation)) do |f| %>
   <div>
-    <%= f.label :body %><br />
     <%= f.text_area :body %>
   </div>
   <%= f.submit %>
 <% end %>
 
 <% if current_user == @conversation.user && !@conversation.read? %>
-  <%= link_to "Mark as read", mark_as_read_user_conversation_path(@conversation.user, @conversation), :method => :post %>
+  <%= link_to t('conversation.show.mark_as_read'), mark_as_read_user_conversation_path(@conversation.user, @conversation), :method => :post %>
 <% elsif current_user == @conversation.user && @conversation.read? %>
-  <%= link_to "Mark as unread", mark_as_unread_user_conversation_path(@conversation.user, @conversation), :method => :post %>
+  <%= link_to t('conversation.show.mark_as_unread'), mark_as_unread_user_conversation_path(@conversation.user, @conversation), :method => :post %>
 <% end %>
 <br />
 
-<%= link_to "Back to conversations", user_conversations_path(@user) %>
+<%= link_to t('conversation.show.back_to_conversations'), user_conversations_path(@user) %>

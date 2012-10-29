@@ -1,7 +1,7 @@
 Conversations
 =
 
-This project rocks big time and uses MIT-LICENSE.
+This project uses the MIT-LICENSE.
 
 Installation
 -
@@ -34,6 +34,29 @@ file.
 * Add
 `has_conversations`
 to User model
+
+* Add following code
+
+```
+def name
+  self.email
+end
+```
+
+to User model
+
+* Add
+
+```
+def index
+  ...
+  respond_to do |format|
+    format.json { render :json => User.where("email like ?", "%#{params[:q]}%").map(&:attributes) }
+  end
+end
+```
+
+to User controller
 
 * Add links to the conversations anywhere you want
 `<%= link_to 'Messages', user_conversations_path(current_user) %>`

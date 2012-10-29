@@ -1,6 +1,6 @@
 module Conversations
   class Conversation < ActiveRecord::Base
-    attr_accessible :subject, :to_tokens
+    attr_accessible :subject, :to_tokens, :messages_attributes
     attr_accessor :to_tokens
   
     has_many :user_conversations

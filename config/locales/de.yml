@@ -1,0 +1,28 @@
+de:
+  conversation:
+    index:
+      new_conversation: 'Neue Konversation erstellen'
+    new:
+      new_conversation: 'Neue Konversation'
+    show:
+      from: 'Von'
+      to: 'An'
+      time_ago: "vor %{time}"
+      wrote: 'schrieb %{person}'
+      mark_as_read: 'Als gelesen markieren'
+      mark_as_unread: 'Als ungelesen markieren'
+      back_to_conversations: 'Zurück zu den Konversationen'
+  activerecord:
+    models:
+      conversations/conversation:
+        one: 'Konversation'
+        other: 'Konversationen'
+      conversations/message:
+        one: 'Nachricht'
+        other: 'Nachrichten'
+    attributes:
+      conversations/conversation:
+        to_tokens: 'An'
+        subject: 'Betreff'
+      conversations/message:
+        body: 'Text'

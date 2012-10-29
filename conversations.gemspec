@@ -22,8 +22,8 @@ Gem::Specification.new do |s|
   
   s.rubyforge_project = "conversations"
 
-  s.add_dependency "rails", "~> 3.1.3"
-  s.add_dependency "jquery-rails", "~> 1.0.19"
+  s.add_dependency "rails", "~> 3.2.0"
+  s.add_dependency "jquery-rails", "~> 2.1.1"
 
   s.add_development_dependency "sqlite3", "~> 1.3"
   s.add_development_dependency "rspec-rails", "~> 2.8"
