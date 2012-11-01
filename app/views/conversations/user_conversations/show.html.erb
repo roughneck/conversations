@@ -1,27 +1,29 @@
 <h1><%= @conversation.subject %></h1>
 
-<div>
-  <h4><%= t('conversation.show.from') %>: <%= @user.name %></h4>
-  <h4><%= t('conversation.show.to') %>:</h4>
-  <ul>
-    <%# TODO: move method into model %>
-    <% for user in @conversation.users.reject! { |u| u == @user } do %>
-      <li><%= link_to user.name, user %></li>
-    <% end %>
-  </ul>
-</div>
+<p>
+  <b><%= t('conversation.show.participants') %></b>:
+  <%= @conversation.users.map{|u| u.name}.join(', ') %>
+  <br />
+  <b><%= t('conversation.show.created_at') %></b>:
+  <%= l @conversation.created_at %>
+</p>
 
 <% for message in @conversation.messages do %>
-  <div class="message"><%= t('conversation.show.time_ago', time: time_ago_in_words(message.created_at)) %> <%= t('conversation.show.wrote', person: message.user.name) %>:
-    <div class="message_body"><%= message.body %></div>
+  <div class="message">
+    <div class="message-head">
+      <%= t('conversation.show.wrote', person: message.user.name) %>
+      <%= t('conversation.show.time_ago', time: time_ago_in_words(message.created_at)) %>:
+    </div>
+    <div class="message-body">
+      <%= message.body %>
+    </div>
   </div>
 <% end %>
-<hr />
 <%= form_for(@message, :url => user_conversation_messages_path(@conversation.user, @conversation)) do |f| %>
   <div>
-    <%= f.text_area :body %>
+    <%= f.text_area :body, cols: 75, rows: 5 %>
   </div>
-  <%= f.submit %>
+  <p><%= f.submit %></p>
 <% end %>
 
 <% if current_user == @conversation.user && !@conversation.read? %>

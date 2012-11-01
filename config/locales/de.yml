@@ -5,13 +5,13 @@ de:
     new:
       new_conversation: 'Neue Konversation'
     show:
-      from: 'Von'
-      to: 'An'
+      participants: 'Teilnehmer'
       time_ago: "vor %{time}"
-      wrote: 'schrieb %{person}'
+      wrote: '%{person} schrieb'
       mark_as_read: 'Als gelesen markieren'
       mark_as_unread: 'Als ungelesen markieren'
       back_to_conversations: 'Zurück zu den Konversationen'
+      created_at: 'Erstellt am'
   activerecord:
     models:
       conversations/conversation:
