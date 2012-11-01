@@ -12,8 +12,8 @@ Gem::Specification.new do |s|
   s.authors     = ["Patrick Bartels"]
   s.email       = ["patrick@bartels.ug"]
   s.homepage    = %q{https://github.com/roughneck/conversations}
-  s.summary     = "Summary of Conversations."
-  s.description = "Description of Conversations."
+  s.summary     = "Messaging gem for rails applications"
+  s.description = "Conversations is a messaging system that enables users of devise-based Rails applications to exchanges messages with any other user. It supports conversations with multiple participants."
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")

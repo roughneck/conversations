@@ -34,18 +34,18 @@ feature "UserConversation", %q{} do
   
   scenario "view a conversation" do
     visit user_conversation_path @sender, @user_conversation
-    page.should have_content('From')
+    page.should have_content('Participants')
   end
   
   scenario "mark a conversation as un/read" do
     visit user_path @recipient
     click_link 'Sign In as This User'
     visit user_conversation_path @recipient, @user_conversation
-    page.should have_content('Mark as read')
-    click_link 'Mark as read'
-    page.should have_content('Mark as unread')
-    click_link 'Mark as unread'
-    page.should have_content('Mark as read')
+    page.should have_content('Mark As Read')
+    click_link 'Mark As Read'
+    page.should have_content('Mark As Unread')
+    click_link 'Mark As Unread'
+    page.should have_content('Mark As Read')
   end
   
 end
