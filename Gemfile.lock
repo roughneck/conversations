@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    conversations (0.0.2)
+    conversations (0.0.2.1)
       jquery-rails (~> 2.1.1)
       rails (~> 3.2.0)
 
