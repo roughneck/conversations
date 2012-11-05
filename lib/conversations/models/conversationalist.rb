@@ -7,9 +7,9 @@ module Conversations
       
       module ClassMethods
         def has_conversations
-          has_many :user_conversations, :class_name => "Conversations::UserConversation"
-          has_many :conversations, :through => :user_conversations
-          has_many :messages, :through => :conversations
+          has_many :user_conversations, :class_name => Conversations::UserConversation
+          has_many :conversations, :through => :user_conversations, :class_name => Conversations::Conversation
+          has_many :messages, :through => :conversations, :class_name => Conversations::Message
 
           include InstanceMethods
         end
