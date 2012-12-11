@@ -1,3 +1,9 @@
+0.0.2.2 (2012-12-11)
+-
+* Added to_ids to prepopulate recipient field
+* Improved UI
+* Fixed some issues
+
 0.0.2.1 (2012-11-05)
 -
 * Fixed some issues
