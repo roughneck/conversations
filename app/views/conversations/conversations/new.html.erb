@@ -13,10 +13,12 @@
   <% end %>
   <div>
     <%= f.label :to_tokens %>
-    <%= f.text_field :to_tokens %>
+    <br />
+    <%= f.text_field :to_tokens, "data-pre" => @conversation.users.map(&:attributes).to_json %>
   </div>
   <div>
     <%= f.label :subject %>
+    <br />
     <%= f.text_field :subject %>
   </div>
   <%= f.fields_for :messages do |m| %>

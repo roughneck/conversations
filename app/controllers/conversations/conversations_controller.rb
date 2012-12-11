@@ -6,6 +6,7 @@ module Conversations
       @user = User.find(params[:user_id])
       @conversation = Conversation.new
       @conversation.messages.build
+      @conversation.users << User.where(id: params[:to_ids]) if params[:to_ids]
     end
 
     def create

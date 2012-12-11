@@ -15,7 +15,7 @@
       <%= t('conversation.show.time_ago', time: time_ago_in_words(message.created_at)) %>:
     </div>
     <div class="message-body">
-      <%= message.body %>
+      <%= raw message.body %>
     </div>
   </div>
 <% end %>
