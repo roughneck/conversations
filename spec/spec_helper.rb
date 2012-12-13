@@ -6,9 +6,8 @@ SimpleCov.start
 
 require File.expand_path("../dummy/config/environment.rb",  __FILE__)
 require "rspec/rails"
-
-require 'factory_girl'
-FactoryGirl.find_definitions
+require 'rspec/autorun'
+require 'factory_girl_rails'
 
 ActionMailer::Base.delivery_method = :test
 ActionMailer::Base.perform_deliveries = true
@@ -39,4 +38,7 @@ RSpec.configure do |config|
   
   # Use transactional fixtures
   config.use_transactional_fixtures = true
+  
+  config.infer_base_class_for_anonymous_controllers = false
+  config.order = "random"
 end

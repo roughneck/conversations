@@ -1,11 +1,11 @@
 # This will guess the User class
 FactoryGirl.define do
-  sequence :name do |n|
+  sequence :user_name do |n|
     "John Doe#{n}"
   end
   
   factory :user do
-    name { FactoryGirl.generate(:name) }
+    name { FactoryGirl.generate(:user_name) }
   end
   
   sequence :subject do |n|
